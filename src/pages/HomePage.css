@@ -1,0 +1,17 @@
+.banner-div-home{
+    height: 320px;
+    width: 100%;
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(113, 71, 198, 0.348));
+    margin-top: -10px;
+    border-bottom-left-radius:25px ;
+    border-bottom-right-radius:25px ;
+    display: flex;
+    flex-direction: row;
+    gap: 25%;
+}
+.orderfood-linebend{
+    display: flex;
+    flex-direction: column;
+    margin-left: 170px;
+    margin-top: 40px;
+}

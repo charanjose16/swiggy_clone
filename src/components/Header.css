@@ -1,0 +1,39 @@
+.header-main-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-top: 10px;
+}
+.loc-img-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:8px;
+    margin-right: 130px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.search-icon-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:100px;
+    background-color: rgba(125, 106, 140, 0.095);
+    height: 55px;
+    width: 480px;
+    border-radius: 10px;
+    /* margin-top: 5px; */
+    margin-left: 30px;
+}
+.pro-icon-div{
+    display: flex;
+    align-items: center;
+    margin-bottom:25px;
+    color: rgba(0, 0, 0, 0.733);
+}
+.home-hr-head{
+margin-top: -10px;
+opacity: 0.4;
+}
