@@ -41,6 +41,7 @@
 }
 .horz-main-div {
     display: flex;
+    flex-direction: row;
     overflow-x: hidden; /* Hide the default scrollbar */
     white-space: nowrap;
     margin-left: 190px;
@@ -65,4 +66,36 @@
     background-color: #f0f0f0;
     border-radius: 50%;
   }
-
+.horz-food-img{
+  width: 310px;
+  height: 200px; 
+  object-fit:cover;
+  border-radius: 15px;
+  transition: 0.1s;
+}
+.horz-food-items {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 320px;
+  margin-right: 0px;
+  margin-right: 40px;
+}
+.horz-food-img:hover{
+  transform: scale(0.94);
+}
+.horz-main-div.food{
+  height: 400px;
+  font-family:'Montserrat', sans-serif;
+}
+.hot-name-rev h4,.hot-name-rev p{
+margin:0;padding: 2px;
+}
+.hot-name-rev p{
+  color: rgba(89, 85, 85, 0.779);
+  font-size: 15px;
+  font-weight: 425;
+}
+.hot-name-rev{
+  margin-top: 10px;
+}
