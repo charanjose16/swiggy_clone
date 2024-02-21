@@ -1,0 +1,9 @@
+/* src/fonts.css */
+
+@font-face {
+    font-family: 'urania';
+    src: local('urania'), url('./Urania-ExtraBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  

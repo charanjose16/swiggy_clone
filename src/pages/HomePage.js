@@ -8,6 +8,12 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import rating from "../assets/rating.png"
 import { db } from '../firebase-config';
 import { collection ,getDocs} from 'firebase/firestore';
+import filter from "../assets/filter.png"
+import downarrow from "../assets/downarrow.png"
+import "../fonts/urania/fonts.css"
+import { Accordion, Card, Button } from 'react-bootstrap';
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 
 const HomePage = () => {
 
@@ -15,6 +21,7 @@ const HomePage = () => {
   const [scrollPosition2, setScrollPosition2] = useState(0);
 
   const[chennai,setChennai]=useState([]);
+
   const handleScroll = (direction, containerId) => {
     const container = document.getElementById(containerId);
     const itemWidth = 600; // Adjust the width of each item according to your design
@@ -29,11 +36,13 @@ const HomePage = () => {
   };
 
   useEffect(()=>{
+    console.log("usestate in");
       const getChennaiData = async()=>{
         const res=await getDocs(collection(db,"TopChennai"));
        setChennai(res.docs.map((doc)=>({...doc.data(),name:doc.data().name,image:doc.data().image,rating:doc.data().rating,time:doc.data().time,food:doc.data().food,location:doc.data().location})));
       }
       getChennaiData();
+      console.log("usestate out");
   },[])
 
   const handleWheel = (event, containerId) => {
@@ -54,7 +63,7 @@ const HomePage = () => {
     </div>
     <div className='whats-main-div'>
       <div>
-      <h2 style={{fontWeight:"750",fontSize:"22px",fontFamily:"'basisGrosquesPro', sans-serif"}}>What's on your mind?</h2>
+      <h2 style={{fontWeight:"750",fontSize:"24px",fontFamily:"'urania', sans-serif"}}>What's on your mind?</h2>
       </div>
 
       <div className='left-right-divs'>
@@ -95,7 +104,7 @@ const HomePage = () => {
 
     <div className='whats-main-div'>
       <div>
-      <h2 style={{fontWeight:"750",fontSize:"22px",fontFamily:"'basisGrosquesPro', sans-serif"}}>Top resaurant chains in Chennai</h2>
+      <h2 style={{fontWeight:"750",fontSize:"24px",fontFamily:"'urania', sans-serif"}}>Top resaurant chains in Chennai</h2>
       </div>
 
       <div className='left-right-divs'>
@@ -114,7 +123,7 @@ const HomePage = () => {
       <div><img className='horz-food-img' src={chennai.image}></img></div>
       <div className='hot-name-rev'>
       <h4>{chennai.name}</h4>
-      <div style={{display:"flex",flexDirection:"row",gap:"6px"}}><img src={rating} height="19" width="19"></img><h4>{chennai.rating}</h4><h4 style={{fontSize:"14.5px"}}>• {chennai.time} mins</h4></div>
+      <div style={{display:"flex",flexDirection:"row",gap:"6px"}}><img style={{marginTop:"3px"}} src={rating} height="18" width="19"></img><h4>{chennai.rating}</h4><h4 style={{fontSize:"14.5px"}}>• {chennai.time} mins</h4></div>
       <p>{chennai.food}</p>
       <p>{chennai.location}</p>
       </div>
@@ -129,9 +138,45 @@ const HomePage = () => {
            
     </div>
     <hr style={{width:"75%",marginTop:"50px",opacity:"0.3"}}></hr>
+    <h2 style={{fontWeight:"750",fontSize:"24px",fontFamily:'urania, sans-serif',marginLeft:"215px",marginTop:"40px"}}>Restaurants with online food delivery in chennai</h2>
+    <div className='edits-filter-div'> 
+      <div className='edit-fonts-div filter'><h3 className='edit-fonts-h3'>Filter</h3><img src={filter} style={{marginTop:"3px",marginRight:"10px"}} width="16" height="13"></img></div>
+      <div className='edit-fonts-div'><h3 className='edit-fonts-h3'>Sort By</h3><img src={downarrow} style={{marginTop:"4px",marginRight:"10px"}} width="14" height="12"></img></div>
+      <div className='edit-fonts-div'><h3 className='edit-fonts-h3'>Fast Delivery</h3></div>
+      <div className='edit-fonts-div'><h3 className='edit-fonts-h3'>New on Swiggy</h3></div>
+      <div className='edit-fonts-div'><h3 className='edit-fonts-h3'>Rating 4.0+</h3></div>
+      <div className='edit-fonts-div'><h3 className='edit-fonts-h3'>Pure Veg</h3></div>
+      <div className='edit-fonts-div'><h3 className='edit-fonts-h3'>Offers</h3></div>
+      <div className='edit-fonts-div'><h3 className='edit-fonts-h3'>Rs.300-Rs.600</h3></div>
+      <div className='edit-fonts-div'><h3 className='edit-fonts-h3'>Less than Rs.300</h3></div>
+    </div>
 
 
+    <div className='chennai-f-grid-main' style={{fontFamily:"montserrat,sans-serif"}}>
+    {chennai.map((chennai)=>(
+    <div className='ch-f-grid-item'><div className='c-f-img-div'><img className='c-f-img' src={chennai.image}></img></div><div className='hot-name-rev'>
+      <h4>{chennai.name}</h4>
+      <div style={{display:"flex",flexDirection:"row",gap:"6px"}}><img style={{marginTop:"3px"}} src={rating} height="18" width="19"></img><h4>{chennai.rating}</h4><h4 style={{fontSize:"14.5px"}}>• {chennai.time} mins</h4></div>
+      <p>{chennai.food}</p>
+      <p >{chennai.location}</p>
+      </div></div>
+      ))}
+
+    </div>
+
+    <div className='hme-sm'><h3 style={{fontWeight:"500",fontSize:"16px",color:"rgba(0, 0, 0, 0.733)"}}>Show more</h3><img  src={downarrow} style={{marginTop:"4px",marginRight:"10px"}} width="14" height="12"></img></div>
+    <hr style={{width:"85%",marginTop:"50px",opacity:"0.3"}}></hr>
     
+
+    <h2 style={{fontWeight:"750",fontSize:"24px",fontFamily:'urania, sans-serif',marginLeft:"115px",marginTop:"70px"}}>Food culture in Chennai</h2>
+
+
+   <div className='why-order-div'>
+   <h1 className='why-order-text' style={{fontWeight:"640",fontSize:"28px",marginTop:"40px"}}>Why Order Food Online in Chennai with Swiggy?</h1>
+   <p className='why-order-text'>Do you feel too exhausted to cook? Are you anticipating visitors? When you are too tired to cook, have unexpected guests, or are working late, ordering food online is the wisest step. Swiggy comes to your rescue to calm your hunger pangs in less than an hour. All you have to do is download the app and order food online from your favourite restaurant in Chennai. Just select whether you want to pay online or cash on delivery, relax on a comfortable sofa, and wait for some delectable dishes to reach your doorstep within 45 minutes...</p>
+   </div>
+
+
     </div>
   )
 }
