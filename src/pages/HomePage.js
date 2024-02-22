@@ -11,8 +11,9 @@ import { collection ,getDocs} from 'firebase/firestore';
 import filter from "../assets/filter.png"
 import downarrow from "../assets/downarrow.png"
 import "../fonts/urania/fonts.css"
-import { Accordion, Card, Button } from 'react-bootstrap';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Footer from "../components/Footer"
+
 
 
 const HomePage = () => {
@@ -176,7 +177,98 @@ const HomePage = () => {
    <p className='why-order-text'>Do you feel too exhausted to cook? Are you anticipating visitors? When you are too tired to cook, have unexpected guests, or are working late, ordering food online is the wisest step. Swiggy comes to your rescue to calm your hunger pangs in less than an hour. All you have to do is download the app and order food online from your favourite restaurant in Chennai. Just select whether you want to pay online or cash on delivery, relax on a comfortable sofa, and wait for some delectable dishes to reach your doorstep within 45 minutes...</p>
    </div>
 
+   <h2 style={{fontWeight:"750",fontSize:"24px",fontFamily:'urania, sans-serif',marginLeft:"115px",marginTop:"70px"}}>Explore localities in and around Chennai</h2>
 
+  <div className='locali-grid-main'>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Pulikundram</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Perumbakkam</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Karikalavakkam</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Narasingapuram</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Majankarani</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Vadattur</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Aranvoyal</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Karlambakkam</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Perattur</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Illupur</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Kilacheri</h4></div>
+    <div className='locali-list-div showmor'><h4 style={{fontWeight:"650",opacity:"0.75",opacity:"0.70"}}>Show more</h4><img style={{marginLeft:"4px"}} height="12" width="13" src={downarrow}></img></div>
+
+  </div>
+
+  <h2 style={{fontWeight:"750",fontSize:"24px",fontFamily:'urania, sans-serif',marginLeft:"115px",marginTop:"90px"}}>What's Chennai eating! People ordering in Chennai</h2>
+
+  <div className='locali-grid-main'>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>American Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Andhra Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Arabian Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Asian Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Bakery Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Bakery Products Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Barbecue Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Bengali Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Beverages Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Briyani Restaurants</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Burgers Restaurants</h4></div>
+    <div className='locali-list-div showmor'><h4 style={{fontWeight:"650",opacity:"0.75",opacity:"0.70"}}>Show more</h4><img style={{marginLeft:"4px"}} height="12" width="13" src={downarrow}></img></div>
+
+  </div>
+
+  <h2 style={{fontWeight:"750",fontSize:"24px",fontFamily:'urania, sans-serif',marginLeft:"115px",marginTop:"90px"}}>Restaurant Chains in Chennai</h2>
+
+  <div className='locali-grid-main'>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Faruuzi Multicuisine</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Sree Akshayam</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Theka Coffee</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Arambam Sweet House</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Arabian Nights</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Shree Mithai</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Lassi Nation</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>MEETING POINT</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Potful - Claypot Briyani</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>EAT MORE FRIED CHICKEN</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Aaladipatiyan Halwa Kadai</h4></div>
+    <div className='locali-list-div showmor'><h4 style={{fontWeight:"650",opacity:"0.75",opacity:"0.70"}}>Show more</h4><img style={{marginLeft:"4px"}} height="12" width="13" src={downarrow}></img></div>
+
+  </div>
+
+
+  <h2 style={{fontWeight:"750",fontSize:"24px",fontFamily:'urania, sans-serif',marginLeft:"115px",marginTop:"90px"}}>Popular Dishes in Chennai</h2>
+
+  <div className='locali-grid-main'>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Samosa</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Kaju Katli</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Kulcha</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Egg Fried Rice</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Mutton Rogan Josh</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Paneer Tikka Masala</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Blueberry Cheescake</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Chicken Soup</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Dosa</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Fries</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Lasagna</h4></div>
+    <div className='locali-list-div showmor'><h4 style={{fontWeight:"650",opacity:"0.75",opacity:"0.70"}}>Show more</h4><img style={{marginLeft:"4px"}} height="12" width="13" src={downarrow}></img></div>
+
+  </div>
+
+
+  <h2 style={{fontWeight:"750",fontSize:"24px",fontFamily:'urania, sans-serif',marginLeft:"115px",marginTop:"90px"}}>More Food Options Near Me</h2>
+
+  <div className='locali-grid-main'>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>American food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Andhra food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Arabian food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Asian food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Bakery food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Bakery Products food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Barbecue food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Bengali food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Beverages food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Briyani food near me</h4></div>
+    <div className='locali-list-div'><h4 style={{fontWeight:"500",opacity:"0.75"}}>Burgers food near me</h4></div>
+    <div className='locali-list-div showmor'><h4 style={{fontWeight:"650",opacity:"0.75",opacity:"0.70"}}>Show more</h4><img style={{marginLeft:"4px"}} height="12" width="13" src={downarrow}></img></div>
+
+  </div>
+<Footer></Footer>
     </div>
   )
 }
