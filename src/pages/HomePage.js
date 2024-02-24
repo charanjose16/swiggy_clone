@@ -13,6 +13,7 @@ import downarrow from "../assets/downarrow.png"
 import "../fonts/urania/fonts.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Footer from "../components/Footer"
+import { useNavigate} from 'react-router-dom';
 
 
 
@@ -20,6 +21,9 @@ const HomePage = () => {
 
   const [scrollPosition1, setScrollPosition1] = useState(0);
   const [scrollPosition2, setScrollPosition2] = useState(0);
+  const navigate =useNavigate();
+
+
 
   const[chennai,setChennai]=useState([]);
 
@@ -40,7 +44,7 @@ const HomePage = () => {
     console.log("usestate in");
       const getChennaiData = async()=>{
         const res=await getDocs(collection(db,"TopChennai"));
-       setChennai(res.docs.map((doc)=>({...doc.data(),name:doc.data().name,image:doc.data().image,rating:doc.data().rating,time:doc.data().time,food:doc.data().food,location:doc.data().location})));
+       setChennai(res.docs.map((doc)=>({...doc.data(),name:doc.data().name,image:doc.data().image,rating:doc.data().rating,time:doc.data().time,food:doc.data().food,location:doc.data().location,id:doc.id})));
       }
       getChennaiData();
       console.log("usestate out");
@@ -118,8 +122,8 @@ const HomePage = () => {
 
     
     <div className='horz-main-div food'  id='horz-container-2' style={{ transform: `translateX(${scrollPosition2}px)` }} onWheel={(event) => handleWheel(event, 'horz-container-2')}>
-    {chennai.map((chennai)=>(
-    <div className='horz-food-items' >
+    { chennai.map((chennai)=>(
+    <div className='horz-food-items' onClick={()=>{navigate("/restaurant",{state:{RestoData:chennai}})}} >
     
       <div><img className='horz-food-img' src={chennai.image}></img></div>
       <div className='hot-name-rev'>
@@ -154,8 +158,8 @@ const HomePage = () => {
 
 
     <div className='chennai-f-grid-main' style={{fontFamily:"montserrat,sans-serif"}}>
-    {chennai.map((chennai)=>(
-    <div className='ch-f-grid-item'><div className='c-f-img-div'><img className='c-f-img' src={chennai.image}></img></div><div className='hot-name-rev'>
+    { chennai.map((chennai)=>(
+    <div className='ch-f-grid-item' onClick={()=>{navigate("/restaurant",{state:{RestoData:chennai}})}}><div className='c-f-img-div'><img className='c-f-img' src={chennai.image}></img></div><div className='hot-name-rev'>
       <h4>{chennai.name}</h4>
       <div style={{display:"flex",flexDirection:"row",gap:"6px"}}><img style={{marginTop:"3px"}} src={rating} height="18" width="19"></img><h4>{chennai.rating}</h4><h4 style={{fontSize:"14.5px"}}>• {chennai.time} mins</h4></div>
       <p>{chennai.food}</p>

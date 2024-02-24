@@ -8,22 +8,6 @@ import {db} from "../firebase-config"
 import { collection ,getDoc,doc} from 'firebase/firestore';
 const Footer = () => {
   
-const[data,setData]=useState([])
-const ref = doc(db, "TopChennai", "3o5oNhuYiqBP1vgQKlL6");
-
-useEffect(() => {
-  const fetchData = async () => {
- 
-      const docSnap = await getDoc(ref);
-      const prod = docSnap.data().products;
-      setData(prod);
-  
-  };
-
-  fetchData();
-}, []);
-
-data.map((data)=>{console.log(data.name);})
 
 
   return (
