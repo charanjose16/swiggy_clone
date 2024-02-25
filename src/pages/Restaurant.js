@@ -11,7 +11,7 @@ import nonVeg from "../assets/nonVeg.png"
 import { useLocation } from 'react-router-dom'
 import { db } from '../firebase-config'
 import { getDoc ,doc} from 'firebase/firestore'
-
+import fork from "../assets/fork.png"
 
 const Restaurant = () => {
 
@@ -93,10 +93,18 @@ useEffect(() => {
         <div>
         <hr className='line'></hr>
         </div>
+
       
 
         </div>
         ))}
+
+        <div className='brws-main'>
+          <div style={{display:"flex",flexDirection:"row",gap:"10px",alignItems:"center",justifyContent:"center"}} className='brse-men'>
+            <img src={fork} width="14" height="14"></img>
+            <h5>BROWSE MENU</h5>
+          </div>
+        </div>
        
 
     </div>
